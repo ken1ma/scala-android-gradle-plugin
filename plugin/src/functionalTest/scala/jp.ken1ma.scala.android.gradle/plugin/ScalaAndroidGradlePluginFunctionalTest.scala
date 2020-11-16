@@ -16,7 +16,7 @@ class ScalaAndroidGradlePluginFunctionalTest extends AnyFreeSpec {
     Files.writeString(projectDir.resolve("settings.gradle"), "")
     Files.writeString(projectDir.resolve("build.gradle"), """
       plugins {
-        id('jp.ken1ma.scala.android.gradle.plugin')
+        id 'jp.ken1ma.scala.android.gradle.plugin'
       }
     """)
 
