@@ -9,15 +9,15 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * A simple unit test for the 'jp.ken1ma.scala.android.gradle.plugin.greeting' plugin.
+ * A simple unit test for the 'jp.ken1ma.scala.android.gradle.plugin' plugin.
  */
 public class ScalaAndroidGradlePluginTest {
     @Test public void pluginRegistersATask() {
         // Create a test project and apply the plugin
         Project project = ProjectBuilder.builder().build();
-        project.getPlugins().apply("jp.ken1ma.scala.android.gradle.plugin.greeting");
+        project.getPlugins().apply("jp.ken1ma.scala.android.gradle.plugin");
 
         // Verify the result
-        assertNotNull(project.getTasks().findByName("greeting"));
+        assertNotNull(project.getTasks().findByName("compileVariantScala"));
     }
 }

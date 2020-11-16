@@ -24,8 +24,8 @@ dependencies {
 gradlePlugin {
     // Define the plugin
     plugins {
-        greeting {
-            id = 'jp.ken1ma.scala.android.gradle.plugin.greeting'
+        scalaAndroidPlugin {
+            id = 'jp.ken1ma.scala.android.gradle.plugin'
             implementationClass = 'jp.ken1ma.scala.android.gradle.plugin.ScalaAndroidGradlePlugin'
         }
     }

@@ -14,7 +14,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * A simple functional test for the 'jp.ken1ma.scala.android.gradle.plugin.greeting' plugin.
+ * A simple functional test for the 'jp.ken1ma.scala.android.gradle.plugin' plugin.
  */
 public class ScalaAndroidGradlePluginFunctionalTest {
     @Test public void canRunTask() throws IOException {
@@ -24,19 +24,19 @@ public class ScalaAndroidGradlePluginFunctionalTest {
         writeString(new File(projectDir, "settings.gradle"), "");
         writeString(new File(projectDir, "build.gradle"),
             "plugins {" +
-            "  id('jp.ken1ma.scala.android.gradle.plugin.greeting')" +
+            "  id('jp.ken1ma.scala.android.gradle.plugin')" +
             "}");
 
         // Run the build
         GradleRunner runner = GradleRunner.create();
         runner.forwardOutput();
         runner.withPluginClasspath();
-        runner.withArguments("greeting");
+        runner.withArguments("compileVariantScala");
         runner.withProjectDir(projectDir);
         BuildResult result = runner.build();
 
         // Verify the result
-        assertTrue(result.getOutput().contains("Hello from plugin 'jp.ken1ma.scala.android.gradle.plugin.greeting'"));
+        assertTrue(result.getOutput().contains("Hello from plugin 'jp.ken1ma.scala.android.gradle.plugin'"));
     }
 
     private void writeString(File file, String string) throws IOException {
