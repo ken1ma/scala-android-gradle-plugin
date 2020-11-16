@@ -9,7 +9,7 @@ import org.gradle.api.Plugin;
 /**
  * A simple 'hello world' plugin.
  */
-public class ScalaAndroidGradlePluginPlugin implements Plugin<Project> {
+public class ScalaAndroidGradlePlugin implements Plugin<Project> {
     public void apply(Project project) {
         // Register a task
         project.getTasks().register("greeting", task -> {

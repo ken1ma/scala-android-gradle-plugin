@@ -26,7 +26,7 @@ gradlePlugin {
     plugins {
         greeting {
             id = 'jp.ken1ma.scala.android.gradle.plugin.greeting'
-            implementationClass = 'jp.ken1ma.scala.android.gradle.plugin.ScalaAndroidGradlePluginPlugin'
+            implementationClass = 'jp.ken1ma.scala.android.gradle.plugin.ScalaAndroidGradlePlugin'
         }
     }
 }

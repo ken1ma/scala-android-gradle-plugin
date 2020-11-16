@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
 /**
  * A simple functional test for the 'jp.ken1ma.scala.android.gradle.plugin.greeting' plugin.
  */
-public class ScalaAndroidGradlePluginPluginFunctionalTest {
+public class ScalaAndroidGradlePluginFunctionalTest {
     @Test public void canRunTask() throws IOException {
         // Setup the test build
         File projectDir = new File("build/functionalTest");
