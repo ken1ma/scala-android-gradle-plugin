@@ -9,9 +9,9 @@ import org.scalatestplus.junit.JUnitRunner
 import org.junit.runner.RunWith
 
 @RunWith(classOf[JUnitRunner])
-class AndroidStudioJavaTest extends AnyFreeSpec {
-  "Plain Android Java project without the plugin" in {
-    val projectDir = Paths.get("src/functionalTest/projects/AndroidStudioJava")
+class AndroidStudioScalaTest extends AnyFreeSpec {
+  "Simple Android project with the plugin" in {
+    val projectDir = Paths.get("src/functionalTest/projects/AndroidStudioScala")
     GradleAndroidTestHelper.generateLocalProperties(projectDir)
 
     val runner = GradleRunner.create
@@ -39,11 +39,13 @@ class AndroidStudioJavaTest extends AnyFreeSpec {
     //assert(runner.withArguments("installDebug").build.getOutput.contains("BUILD SUCCESSFUL"))
     assert(runner.withArguments("uninstallAll").build.getOutput.contains("BUILD SUCCESSFUL"))
 
-    // make sure the tasks to replace still exist in the Android Gradle plugin version
-    assert(buildOutput      .contains("Task :app:compileDebugJavaWithJavac"))
-    assert(buildOutput      .contains("Task :app:compileReleaseJavaWithJavac"))
-    assert(testOutput       .contains("Task :app:compileDebugUnitTestJavaWithJavac"))
-    assert(testOutput       .contains("Task :app:compileReleaseUnitTestJavaWithJavac"))
-    assert(androidTestOutput.contains("Task :app:compileDebugAndroidTestJavaWithJavac"))
+    //assert(runner.withArguments("scaladoc").build.getOutput.contains("BUILD SUCCESSFUL"))
+
+    // make sure the tasks have been run
+    assert(buildOutput      .contains("Task :app:compileDebugScala"))
+    assert(buildOutput      .contains("Task :app:compileReleaseScala"))
+    assert(testOutput       .contains("Task :app:compileDebugUnitTestScala"))
+    assert(testOutput       .contains("Task :app:compileReleaseUnitTestScala"))
+    assert(androidTestOutput.contains("Task :app:compileDebugAndroidTestScala"))
   }
 }
