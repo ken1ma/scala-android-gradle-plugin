@@ -66,7 +66,7 @@ Tasks implemented by the plugin:
         1. I wonder why Kotlin doesn't have this problem
         1. lint classpath seems [complex](https://android.googlesource.com/platform/tools/base/+/studio-master-dev/lint/libs/lint-gradle-api/)
 
-1. ScalaTest doesn't seem to be able to run in [instrumented unit test](https://developer.android.com/training/testing/unit-testing/instrumented-unit-tests) (androidTest) since it requires [java.lang.invoke.VarHandle.releaseFence](https://github.com/scala/scala/blob/v2.13.3/src/library/scala/runtime/Statics.java#L172)
+1. ScalaTest doesn't seem to be able to run in [instrumented unit test](https://developer.android.com/training/testing/unit-testing/instrumented-unit-tests) (androidTest) since it requires [java.lang.invoke.VarHandle.releaseFence](https://github.com/scala/scala/blob/v2.13.4/src/library/scala/runtime/Statics.java#L172)
 
 
 # Applying the plugin
@@ -101,7 +101,7 @@ In `app/build.gradle`
     ...
 
     dependencies {
-        implementation 'org.scala-lang:scala-library:2.13.3'
+        implementation 'org.scala-lang:scala-library:2.13.4'
         testImplementation 'org.scalatest:scalatest_2.13:3.2.3'
         testImplementation 'org.scalatestplus:junit-4-13_2.13:3.2.3.0' // for org.scalatest.junit.JUnitRunner
         ...

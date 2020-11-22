@@ -23,7 +23,7 @@ dependencies {
     implementation 'com.android.tools.build:gradle:4.1.1' // TODO: this might pull too many unneeded dependencies
 
     // https://docs.gradle.org/current/samples/sample_building_scala_applications.html
-    implementation 'org.scala-lang:scala-library:2.13.3'
+    implementation 'org.scala-lang:scala-library:2.13.4'
     testImplementation 'org.scalatest:scalatest_2.13:3.2.3'
     testImplementation 'org.scalatestplus:junit-4-13_2.13:3.2.3.0' // for org.scalatest.junit.JUnitRunner
     // TODO: scala-xml may be needed https://docs.gradle.org/current/samples/sample_building_scala_applications.html
