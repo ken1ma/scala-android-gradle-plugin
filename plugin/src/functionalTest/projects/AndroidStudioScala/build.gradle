@@ -5,7 +5,19 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.1.1"
+        /*
+            The Android plugin is commented out to avoid
+                org.gradle.api.UnknownDomainObjectException: Extension of type 'BaseExtension' does not exist. Currently registered extension types: [ExtraPropertiesExtension, DefaultArtifactPublicationSet, SourceSetContainer, ReportingExtension, JavaPluginExtension, JavaInstallationRegistry, JavaToolchainService, NamedDomainObjectContainer<BaseVariantOutput>, BaseAppModuleExtension, ScalaRuntimeForAndroid, ScalaPluginExtension]
+                    at org.gradle.internal.extensibility.ExtensionsStorage.getHolderByType(ExtensionsStorage.java:88)
+                    at org.gradle.internal.extensibility.ExtensionsStorage.getByType(ExtensionsStorage.java:74)
+                    at org.gradle.internal.extensibility.DefaultConvention.getByType(DefaultConvention.java:159)
+                    at org.gradle.internal.extensibility.DefaultConvention.getByType(DefaultConvention.java:154)
+                    at jp.ken1ma.scala.android.gradle.plugin.ScalaAndroidGradlePlugin.$anonfun$apply$2(ScalaAndroidGradlePlugin.scala:85)
+            when invoked from functionalTest
+
+            This probably happens because the classpath here and classpath set by GradleRunner.withPluginClasspath is different
+        */
+        //classpath "com.android.tools.build:gradle:4.1.1"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

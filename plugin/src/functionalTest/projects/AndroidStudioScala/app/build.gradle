@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'jp.ken1ma.scala.android.gradle.plugin'
 }
 
 android {
@@ -26,14 +27,25 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    lintOptions {
+        /*
+            ignore
+                .../scala-android-gradle-plugin/plugin/src/functionalTest/projects/AndroidStudioScala/app/src/main/AndroidManifest.xml:12: Error: Class referenced in the manifest, com.example.androidstudioscala.MainActivity, was not found in the project or the libraries [MissingClass]
+                        <activity android:name=".MainActivity">
+                                                ~~~~~~~~~~~~~
+        */
+        abortOnError false
+    }
 }
 
 dependencies {
+    implementation 'org.scala-lang:scala-library:2.13.3'
+    testImplementation 'org.scalatest:scalatest_2.13:3.2.3'
+    testImplementation 'org.scalatestplus:junit-4-13_2.13:3.2.3.0' // for org.scalatest.junit.JUnitRunner
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
